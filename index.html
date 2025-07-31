@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Elvira Maharani Day</title>
+    <title>Surat Valentine</title>
     <style>
         body {
             background-color: pink;
@@ -13,6 +13,13 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(50px);
         }
 
         .envelope {
@@ -47,10 +54,9 @@
             margin-top: 10px;
         }
 
-        /* Animasi teks keluar */
         .message {
             position: absolute;
-            top: 50%;
+            top: 75%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
             background: white;
@@ -65,33 +71,55 @@
         }
 
         .show-message {
-            transform: translate(-50%, -150%) scale(1);
+            transform: translate(-50%, -160%) scale(1);
             opacity: 1;
         }
+
+        .next-btn {
+            background: red;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            .next-btn:hover {
+                background: darkred;
+            }
     </style>
 </head>
 <body>
 
-    <div class="envelope" onclick="showLetter()">
-        <h2>Dear Mba Elvira,</h2>
-        <p>Click to open the message 💌</p>
-        <div class="heart">❤️</div>
-    </div>
+    <div class="container">
+        <div class="envelope" onclick="showLetter()">
+            <h2>Dear Elvira Maharani,</h2>
+            <p>Click to open the message 💌</p>
+            <div class="heart">❤️</div>
+        </div>
 
-    <div class="message" id="message">
-        <h3>Dear Mba Elvira,</h3>
-        <p>
-            Happy National Girlfriend Day, Elvira Maharani.
+        <div class="message" id="message">
+            <h3>Dear Elvira Maharani,</h3>
+            <p>
+                Happy National Girlfriend Day, Elvira Maharani.
 
-            Katanya sih hari ini buat ngucapin terima kasih ke pacar… yaudah deh, makasih ya udah mau sabar sama aku yang kadang ngeselin.
+                Katanya sih hari ini buat ngucapin terima kasih ke pacar… yaudah deh, makasih ya udah mau sabar sama aku yang kadang ngeselin.
 
-            Kadang suka heran juga, kok kamu bisa suka sama aku ya?. Tapi ya, jangan kemana-mana ya… soalnya aku udah nyaman nih sama mba Elvira. 🤭❤️
-        </p>
+                Kadang suka heran juga, kok kamu bisa suka sama aku ya?. Tapi ya, jangan kemana-mana ya… soalnya aku udah nyaman nih sama mba Elvira. 🤭❤️
+            </p>
+            <button class="next-btn" onclick="goToFlowers()">Next 🌸</button>
+        </div>
     </div>
 
     <script>
         function showLetter() {
             document.getElementById("message").classList.toggle("show-message");
+        }
+        function goToFlowers() {
+            localStorage.setItem("allowMusic", "true");
+            window.location.href = "flowers.html";
         }
     </script>
 
